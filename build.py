@@ -34,7 +34,7 @@ TOPICS = [
 ]
 
 def nav(active):
-    items = [('index.html','Home'),('about.html','About'),('workshops.html','Workshops'),('team.html','Our Team'),('facilities.html','For Facilities'),('contact.html','Contact')]
+    items = [('index.html','Home'),('about.html','About'),('research.html','Research'),('workshops.html','Workshops'),('team.html','Our Team'),('facilities.html','For Facilities'),('contact.html','Contact')]
     lis = ''.join('<li><a href="%s"%s>%s</a></li>' % (h, ' aria-current="page"' if h==active else '', t) for h,t in items)
     return f'''<a class="skip" href="#main">Skip to content</a>
 <header class="nav"><div class="wrap">
@@ -46,7 +46,7 @@ def nav(active):
 FOOTER = f'''<footer><div class="wrap">
   <div><a class="brand" href="index.html">{LOGO}<span>Thoughts in Mind</span></a>
     <p style="margin-top:14px;max-width:38ch">Evidence-based cognitive stimulation workshops for seniors in assisted living and nursing homes. Serving the Tri-Valley and East Bay.</p></div>
-  <div><h4>Explore</h4><ul><li><a href="about.html">Mission &amp; research</a></li><li><a href="workshops.html">The workshops</a></li><li><a href="team.html">Facilitators &amp; training</a></li><li><a href="facilities.html">For facilities</a></li><li><a href="Thoughts-in-Mind-Brochure.pdf" download>Brochure (PDF)</a></li></ul></div>
+  <div><h4>Explore</h4><ul><li><a href="about.html">Our mission</a></li><li><a href="research.html">Research foundation</a></li><li><a href="workshops.html">The workshops</a></li><li><a href="team.html">Facilitators &amp; training</a></li><li><a href="facilities.html">For facilities</a></li><li><a href="Thoughts-in-Mind-Brochure.pdf" download>Brochure (PDF)</a></li></ul></div>
   <div><h4>Contact</h4><ul><li><a href="mailto:thoughtsinmind2@gmail.com">thoughtsinmind2@gmail.com</a></li><li><a href="tel:+19256602773">(925) 660-2773</a></li><li><a href="contact.html">Send an inquiry</a></li></ul></div>
   <div class="foot-note"><span>&copy; <span id="year">2026</span> Thoughts in Mind. All rights reserved.</span><span>Our workshops are enrichment programs, not medical therapy or treatment.</span></div>
 </div></footer>
@@ -133,7 +133,7 @@ home = f'''
     <h2>Why cognitive stimulation</h2>
     <p class="lede">Medication can offer modest gains for some people with dementia, but it does not stop or reverse the disease. Clinical guidelines now recommend pairing it with evidence-based, non-pharmacological programs like structured group cognitive stimulation.</p>
     <div class="stat"><span class="big">37</span><span class="cap">randomized controlled trials reviewed by the 2023 Cochrane review of cognitive stimulation for dementia (Woods et al.)</span></div>
-    <a class="btn btn-ghost" href="about.html#research">Read the research summary {ARROW}</a>
+    <a class="btn btn-ghost" href="research.html">Read the research {ARROW}</a>
   </div>
   <ul class="points">
     <li><span class="dot">{ICONS['brain']}</span><div><h3>Improves cognition and communication</h3><p>Multiple randomized controlled trials and systematic reviews show structured group cognitive stimulation can improve cognitive functioning, communication, and quality of life.</p></div></li>
@@ -159,9 +159,9 @@ home = f'''
 <section style="padding-top:0"><div class="wrap">
   <div class="sec-head"><div><p class="eyebrow">Our facilitators</p><h2>Trained, certified, and here for the long run</h2></div><p class="lede">Every facilitator completes caregiving and dementia care training before working with residents, so they understand not just the activities but the reasoning behind them.</p></div>
   <div class="team">
-    <div class="person"><div class="avatar">N</div><h3>Noor Dharni</h3><p class="role">Certified Nursing Assistant. Senior at UC Berkeley, B.A. in Neuroscience and Public Health.</p></div>
-    <div class="person"><div class="avatar gold">S</div><h3>Sehej Dharni</h3><p class="role">Facilitator. Certified in Introduction to Caregiving and Dementia Care and Management.</p></div>
-    <div class="person"><div class="avatar sage">Y</div><h3>Yashita Vijay</h3><p class="role">Facilitator. Certified in Introduction to Caregiving and Dementia Care and Management.</p></div>
+    <div class="person"><div class="avatar"><img src="images/team-noor.jpg" alt="Noor Dharni" width="270" height="270"></div><h3>Noor Dharni</h3><p class="role">Certified Nursing Assistant. Senior at UC Berkeley, B.A. in Neuroscience and Public Health.</p></div>
+    <div class="person"><div class="avatar"><img src="images/team-sehej.jpg" alt="Sehej Dharni" width="228" height="228"></div><h3>Sehej Dharni</h3><p class="role">Facilitator. Certified in Introduction to Caregiving and Dementia Care and Management.</p></div>
+    <div class="person"><div class="avatar"><img src="images/team-yashita.jpg" alt="Yashita Vijay" width="208" height="208"></div><h3>Yashita Vijay</h3><p class="role">Facilitator. Certified in Introduction to Caregiving and Dementia Care and Management.</p></div>
   </div>
   <p style="margin-top:28px"><a href="team.html">Meet the team and read about our training {ARROW.replace('<svg','<svg style="width:16px;height:16px;display:inline;vertical-align:-3px"')}</a></p>
 </div></section>
@@ -180,7 +180,21 @@ about = f'''
     <p>Thoughts in Mind delivers research-backed workshops incorporating CST-informed activities to seniors in assisted living and nursing homes. Our mission is to protect cognitive health, reduce isolation, and strengthen the mental sharpness and memory of older adults through engaging activities.</p>
     <div class="callout"><h3>Not therapy or treatment</h3><p>These workshops are evidence-based cognitive stimulation designed for prevention and enrichment. We work to keep brains active, support mental health, and build community.</p></div>
     <p>Cognitive Stimulation Therapy (CST) is a structured, group-based program of themed activities developed for people living with mild to moderate dementia. Our workshops draw on its principles: consistent structure, multi-sensory activities, an emphasis on opinions over facts, and a warm, person-centered group setting.</p>
+    <p><a href="research.html">Read the research behind our program {ARROW.replace('<svg','<svg style="width:16px;height:16px;display:inline;vertical-align:-3px"')}</a></p>
   </div>
+</div></section>
+
+{cta('Want the full curriculum?', 'Email us and we will send a complete breakdown of every workshop, the domains each one targets, and how a session runs from start to finish.')}
+'''
+page('about.html','About | Thoughts in Mind','Our mission and the research foundation behind Thoughts in Mind cognitive stimulation workshops.', about, 'about.html')
+
+
+# ---------------- RESEARCH ----------------
+research = f'''
+<section class="page-head"><div class="wrap"><p class="eyebrow">Research foundation</p><h1>The evidence behind our workshops</h1><p class="lede">Our curriculum is built on peer-reviewed research into cognitive stimulation for older adults. Here is what the evidence says and how we apply it.</p></div></section>
+
+<section><div class="wrap">
+  <div class="stat" style="max-width:520px"><span class="big">37</span><span class="cap">randomized controlled trials reviewed by the 2023 Cochrane review of cognitive stimulation for dementia (Woods et al.)</span></div>
 </div></section>
 
 <section id="research" style="padding-top:0"><div class="wrap split">
@@ -207,9 +221,8 @@ about = f'''
   </ol>
 </div></section>
 
-{cta('Want the full curriculum?', 'Email us and we will send a complete breakdown of every workshop, the domains each one targets, and how a session runs from start to finish.')}
 '''
-page('about.html','About | Thoughts in Mind','Our mission and the research foundation behind Thoughts in Mind cognitive stimulation workshops.', about, 'about.html')
+page('research.html','Research | Thoughts in Mind','The research foundation behind Thoughts in Mind cognitive stimulation workshops, with references.', research, 'research.html')
 
 # ---------------- WORKSHOPS ----------------
 ws_items = ''
@@ -256,11 +269,11 @@ team = f'''
 
 <section><div class="wrap">
   <div class="team">
-    <div class="person"><div class="avatar">N</div><h3>Noor Dharni</h3><p class="role">Senior at UC Berkeley, pursuing a B.A. in Neuroscience and Public Health.</p>
+    <div class="person"><div class="avatar"><img src="images/team-noor.jpg" alt="Noor Dharni" width="270" height="270"></div><h3>Noor Dharni</h3><p class="role">Senior at UC Berkeley, pursuing a B.A. in Neuroscience and Public Health.</p>
       <ul class="creds"><li>{CHECK}<span>Certified Nursing Assistant, California Department of Public Health (<a href="https://cvl.cdph.ca.gov/DetailPage.aspx?cert_holder_id=738672" target="_blank" rel="noopener">verify license</a>)</span></li></ul></div>
-    <div class="person"><div class="avatar gold">S</div><h3>Sehej Dharni</h3><p class="role">Incoming senior at Dublin High School.</p>
+    <div class="person"><div class="avatar"><img src="images/team-sehej.jpg" alt="Sehej Dharni" width="228" height="228"></div><h3>Sehej Dharni</h3><p class="role">Senior at Dublin High School.</p>
       <ul class="creds"><li>{CHECK}<span>Certified: Introduction to Caregiving</span></li><li>{CHECK}<span>Certified: Introduction to Dementia Care and Management</span></li></ul></div>
-    <div class="person"><div class="avatar sage">Y</div><h3>Yashita Vijay</h3><p class="role">Incoming senior at Dublin High School.</p>
+    <div class="person"><div class="avatar"><img src="images/team-yashita.jpg" alt="Yashita Vijay" width="208" height="208"></div><h3>Yashita Vijay</h3><p class="role">Senior at Dublin High School.</p>
       <ul class="creds"><li>{CHECK}<span>Certified: Introduction to Caregiving</span></li><li>{CHECK}<span>Certified: Introduction to Dementia Care and Management</span></li></ul></div>
   </div>
 </div></section>
