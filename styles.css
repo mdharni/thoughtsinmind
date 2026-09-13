@@ -312,3 +312,8 @@ form { display: grid; gap: 18px; }
 /* Nav CTA: beat the generic .nav-links a rules */
 .nav-links .nav-cta .btn-primary, .nav-links .nav-cta .btn-primary:hover, .nav-links .nav-cta .btn-primary[aria-current="page"] { color: var(--on-plum); background: var(--plum); font-weight: 700; padding: 12px 20px; }
 .nav-links .nav-cta .btn-primary:hover { background: var(--plum-deep); }
+
+/* Contact: prepared-message panel */
+.sent-panel { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--sage); border-radius: 0 var(--radius) var(--radius) 0; padding: 22px 24px; display: grid; gap: 12px; }
+.sent-panel h3 { font-size: 1.15rem; }
+.sent-panel pre { margin: 0; white-space: pre-wrap; word-break: break-word; font: inherit; font-size: .95rem; background: var(--ground); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; color: var(--ink); }

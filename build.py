@@ -347,7 +347,7 @@ contact = f'''
     </div>
     <div class="callout"><h3>What to include</h3><p>Your community's name, your role, roughly how many residents might take part, and any scheduling preferences. We will reply with a full breakdown of each workshop.</p></div>
   </div>
-  <form id="inquiry" novalidate>
+  <form id="inquiry" data-endpoint="" data-key="">
     <div class="two">
       <div class="field"><label for="name">Your name</label><input id="name" name="name" required autocomplete="name"></div>
       <div class="field"><label for="role">Your role</label><input id="role" name="role" placeholder="Activity director, administrator, family member…"></div>
@@ -360,7 +360,13 @@ contact = f'''
     <div class="field"><label for="residents">Approximate number of residents who might take part</label><select id="residents" name="residents"><option value="">Not sure yet</option><option>Fewer than 6</option><option>6 to 12</option><option>13 to 20</option><option>More than 20</option></select></div>
     <div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" placeholder="Tell us about your residents and what you are hoping for."></textarea></div>
     <div><button class="btn btn-primary" type="submit">Send inquiry {ARROW}</button></div>
-    <p class="form-note" id="form-status">Submitting opens your email app with the message ready to send to thoughtsinmind2@gmail.com.</p>
+    <p class="form-note" id="form-status" role="status">We reply to every inquiry by email.</p>
+    <div class="sent-panel" id="sent-panel" hidden>
+      <h3>Your message is ready</h3>
+      <p class="muted">Your email app should have opened. If it didn't, copy the message below and send it to <a href="mailto:thoughtsinmind2@gmail.com">thoughtsinmind2@gmail.com</a>, or use the button.</p>
+      <pre id="sent-text"></pre>
+      <div class="hero-actions"><button type="button" class="btn btn-ghost" id="copy-btn">Copy message</button><a class="btn btn-primary" id="mail-link" href="#">Open in email app</a></div>
+    </div>
   </form>
 </div></section>
 '''
