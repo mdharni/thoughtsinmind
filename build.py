@@ -95,7 +95,7 @@ home = f'''
       <li>{CHECK}<span>Consistent, structured sessions</span></li>
     </ul></div>
   </div>
-  <figure class="hero-art"><canvas id="constellation" aria-label="Abstract animation of connected points, representing memory and connection"></canvas><figcaption>Six workshop themes. Five cognitive domains. One room, together.</figcaption></figure>
+  <figure class="hero-photo"><img src="images/session-group.jpg" alt="Residents coloring and making greeting cards around a table while two facilitators look on" width="1200" height="1600" fetchpriority="high"><figcaption>A Colors &amp; Hands session in an assisted living community</figcaption></figure>
 </div></section>
 
 <section class="band"><div class="wrap">
