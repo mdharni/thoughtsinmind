@@ -46,7 +46,7 @@ def nav(active):
 FOOTER = f'''<footer><div class="wrap">
   <div><a class="brand" href="index.html">{LOGO}<span>Thoughts in Mind</span></a>
     <p style="margin-top:14px;max-width:38ch">Evidence-based cognitive stimulation workshops for seniors in assisted living and nursing homes. Serving the Tri-Valley and East Bay.</p></div>
-  <div><h4>Explore</h4><ul><li><a href="about.html">Mission &amp; research</a></li><li><a href="workshops.html">The workshops</a></li><li><a href="team.html">Facilitators &amp; training</a></li><li><a href="facilities.html">For facilities</a></li></ul></div>
+  <div><h4>Explore</h4><ul><li><a href="about.html">Mission &amp; research</a></li><li><a href="workshops.html">The workshops</a></li><li><a href="team.html">Facilitators &amp; training</a></li><li><a href="facilities.html">For facilities</a></li><li><a href="Thoughts-in-Mind-Brochure.pdf" download>Brochure (PDF)</a></li></ul></div>
   <div><h4>Contact</h4><ul><li><a href="mailto:thoughtsinmind2@gmail.com">thoughtsinmind2@gmail.com</a></li><li><a href="tel:+19256602773">(925) 660-2773</a></li><li><a href="contact.html">Send an inquiry</a></li></ul></div>
   <div class="foot-note"><span>&copy; <span id="year">2026</span> Thoughts in Mind. All rights reserved.</span><span>Our workshops are enrichment programs, not medical therapy or treatment.</span></div>
 </div></footer>
@@ -55,7 +55,7 @@ FOOTER = f'''<footer><div class="wrap">
 def cta(title='Bring Thoughts in Mind to your community.', text='Email or call us and we will send a full breakdown of each workshop, how sessions run, and how we can build a schedule around your residents.'):
     return f'''<section class="cta"><div class="wrap">
   <div class="stack"><h2>{title}</h2><p class="lede" style="color:inherit;opacity:.9">{text}</p>
-    <div class="hero-actions"><a class="btn btn-gold" href="contact.html">Send an inquiry {ARROW}</a></div></div>
+    <div class="hero-actions"><a class="btn btn-gold" href="contact.html">Send an inquiry {ARROW}</a><a class="btn btn-ghost" style="color:inherit;border-color:rgba(255,255,255,.35)" href="Thoughts-in-Mind-Brochure.pdf" download>Download brochure (PDF)</a></div></div>
   <div class="contact-lines"><a href="mailto:thoughtsinmind2@gmail.com">thoughtsinmind2@gmail.com</a><a href="tel:+19256602773">(925) 660-2773</a><span class="muted" style="color:inherit;opacity:.75;font-size:1rem">Facilitators: Yashita Vijay, Sehej Dharni, Noor Dharni</span></div>
 </div></section>'''
 
@@ -89,7 +89,7 @@ home = f'''
       <li>{CHECK}<span>Consistent, structured sessions</span></li>
     </ul></div>
   </div>
-  <figure class="hero-art"><canvas id="constellation" aria-label="Abstract animation of connected points, representing memory and connection"></canvas><figcaption>Six workshop themes. Five cognitive domains. One room, together.</figcaption></figure>
+  <figure class="hero-photo"><img src="images/session-group.jpg" alt="Residents coloring and making greeting cards around a table while two facilitators look on" width="1200" height="1600" fetchpriority="high"><figcaption>A Colors &amp; Hands session in an assisted living community</figcaption></figure>
 </div></section>
 
 <section class="band"><div class="wrap">
@@ -109,6 +109,16 @@ home = f'''
 <section style="padding-top:0"><div class="wrap">
   <div class="sec-head"><div><p class="eyebrow">The workshops</p><h2>Six themes, each built to stimulate several cognitive domains at once</h2></div><p class="lede">Every workshop pairs a cognitive exercise with an enjoyable, social activity. Residents rotate through the themes so no two weeks feel the same.</p></div>
   <div class="topics">{topic_cards()}</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><div><p class="eyebrow">From our sessions</p><h2>What a workshop looks like in the room</h2></div><p class="lede">Real sessions in Tri-Valley assisted living communities. Small groups, hands busy, and conversation flowing.</p></div>
+  <div class="gallery">
+    <figure class="tall"><img src="images/coloring-closeup.jpg" alt="Close-up of residents coloring detailed patterns with markers and pipe cleaners" loading="lazy"><figcaption>Colors &amp; Hands: pattern coloring and pipe-cleaner flowers</figcaption></figure>
+    <figure class="wide"><img src="images/song-lyrics.jpg" alt="Residents seated in a circle writing on clipboards while a facilitator helps one of them" loading="lazy"><figcaption>Music in Motion: finishing the lyrics to familiar songs</figcaption></figure>
+    <figure><img src="images/tabletop-bowling.jpg" alt="A resident rolling a ball toward tabletop bowling pins as a facilitator watches" loading="lazy"><figcaption>From Memory Lane: tabletop bowling</figcaption></figure>
+    <figure><img src="images/creative-table.jpg" alt="A facilitator leaning in to help residents with scratch-art cards at a long table" loading="lazy"><figcaption>Facilitators work one to one whenever it helps</figcaption></figure>
+  </div>
 </div></section>
 
 <section class="evidence"><div class="wrap">
@@ -203,6 +213,11 @@ for icon, name, sub, desc, doms in TOPICS:
 workshops = f'''
 <section class="page-head"><div class="wrap"><p class="eyebrow">The workshops</p><h1>Six themes, and more on the way</h1><p class="lede">Each workshop pairs a cognitive exercise with an enjoyable group activity. Residents rotate through the themes, so the program stays fresh while the format stays reassuringly familiar.</p></div></section>
 
+<section style="padding-bottom:0"><div class="wrap photo-band">
+  <figure><img src="images/coloring-closeup.jpg" alt="Residents coloring detailed patterns with markers" loading="lazy"></figure>
+  <figure><img src="images/song-lyrics.jpg" alt="Residents writing song lyrics on clipboards during a music workshop" loading="lazy"></figure>
+</div></section>
+
 <section><div class="wrap split">
   <div class="sticky stack"><p class="eyebrow">A typical session</p><h2>Familiar shape, new content every time</h2><p class="muted">Consistency is part of the evidence. Every session follows the same arc so residents always know what to expect.</p></div>
   <ul class="timeline">
@@ -242,6 +257,10 @@ team = f'''
     <div class="person"><div class="avatar sage">Y</div><h3>Yashita Vijay</h3><p class="role">Incoming senior at Dublin High School.</p>
       <ul class="creds"><li>{CHECK}<span>Certified: Introduction to Caregiving</span></li><li>{CHECK}<span>Certified: Introduction to Dementia Care and Management</span></li></ul></div>
   </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <figure class="split-photo" style="aspect-ratio:16/9"><img src="images/session-group.jpg" alt="Facilitators Yashita and Noor standing with residents at a workshop table" loading="lazy"></figure>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap split">
@@ -286,6 +305,11 @@ facilities = f'''
       <li>{CHECK}<span>Guidance on residents who would benefit and any adaptations they need</span></li>
     </ul>
   </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap grid-2" style="align-items:center">
+  <figure class="split-photo" style="aspect-ratio:4/3"><img src="images/tabletop-bowling.jpg" alt="A resident playing tabletop bowling with a facilitator" loading="lazy"></figure>
+  <div class="card"><p class="eyebrow">Printable brochure</p><h3>Share Thoughts in Mind with your team</h3><p>A two-page PDF with our mission, the research behind the program, the six workshops, and how to get started. Forward it to your administrator or print it for your activity board.</p><a class="btn btn-primary dl" href="Thoughts-in-Mind-Brochure.pdf" download>Download the brochure <small>(PDF)</small></a></div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
