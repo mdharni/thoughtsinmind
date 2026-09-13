@@ -308,3 +308,7 @@ form { display: grid; gap: 18px; }
 
 .dl { display: inline-flex; align-items: center; gap: 10px; }
 .dl small { font-weight: 400; opacity: .75; }
+
+/* Nav CTA: beat the generic .nav-links a rules */
+.nav-links .nav-cta .btn-primary, .nav-links .nav-cta .btn-primary:hover, .nav-links .nav-cta .btn-primary[aria-current="page"] { color: var(--on-plum); background: var(--plum); font-weight: 700; padding: 12px 20px; }
+.nav-links .nav-cta .btn-primary:hover { background: var(--plum-deep); }
