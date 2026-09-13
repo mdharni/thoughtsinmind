@@ -60,7 +60,13 @@ def cta(title='Bring Thoughts in Mind to your community.', text='Email or call u
 </div></section>'''
 
 def page(fname, title, desc, body, active):
-    head = f'<title>{title}</title><meta name="description" content="{desc}">{FONTS}<link rel="stylesheet" href="styles.css">'
+    og = (f'<meta property="og:type" content="website"><meta property="og:site_name" content="Thoughts in Mind">'
+          f'<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">'
+          f'<meta property="og:url" content="https://thoughtsinmind.org/{"" if fname=="index.html" else fname}">'
+          f'<meta property="og:image" content="https://thoughtsinmind.org/images/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'
+          f'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{title}"><meta name="twitter:description" content="{desc}"><meta name="twitter:image" content="https://thoughtsinmind.org/images/og.png">'
+          f'<link rel="canonical" href="https://thoughtsinmind.org/{"" if fname=="index.html" else fname}">')
+    head = f'<title>{title}</title><meta name="description" content="{desc}">{og}{FONTS}<link rel="stylesheet" href="styles.css">'
     full = f'<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n{head}\n</head>\n<body>\n{nav(active)}\n<main id="main">\n{body}\n</main>\n{FOOTER}\n</body>\n</html>\n'
     with open(os.path.join(HERE, fname), 'w') as f: f.write(full)
     if fname == 'index.html':
@@ -89,7 +95,7 @@ home = f'''
       <li>{CHECK}<span>Consistent, structured sessions</span></li>
     </ul></div>
   </div>
-  <figure class="hero-photo"><img src="images/session-group.jpg" alt="Residents coloring and making greeting cards around a table while two facilitators look on" width="1200" height="1600" fetchpriority="high"><figcaption>A Colors &amp; Hands session in an assisted living community</figcaption></figure>
+  <figure class="hero-art"><canvas id="constellation" aria-label="Abstract animation of connected points, representing memory and connection"></canvas><figcaption>Six workshop themes. Five cognitive domains. One room, together.</figcaption></figure>
 </div></section>
 
 <section class="band"><div class="wrap">
