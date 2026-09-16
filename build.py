@@ -34,13 +34,13 @@ TOPICS = [
 ]
 
 def nav(active):
-    items = [('index.html','Home'),('about.html','About'),('research.html','Research'),('workshops.html','Workshops'),('facilities.html','For Facilities'),('volunteer.html','Volunteer'),('contact.html','Contact')]
+    items = [('index.html','Home'),('about.html','About'),('research.html','Research'),('workshops.html','Workshops'),('facilities.html','For Facilities'),('volunteer.html','Volunteer')]
     lis = ''.join('<li><a href="%s"%s>%s</a></li>' % (h, ' aria-current="page"' if h==active else '', t) for h,t in items)
     return f'''<a class="skip" href="#main">Skip to content</a>
 <header class="nav"><div class="wrap">
   <a class="brand" href="index.html">{LOGO}<span>Thoughts in Mind</span></a>
   <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-  <nav aria-label="Primary"><ul class="nav-links" id="nav-links">{lis}<li class="nav-cta"><a class="btn btn-primary" href="contact.html">Book a session</a></li></ul></nav>
+  <nav aria-label="Primary"><ul class="nav-links" id="nav-links">{lis}<li class="nav-cta"><a class="btn btn-primary" href="contact.html"{' aria-current="page"' if active=='contact.html' else ''}>Book a session</a></li></ul></nav>
 </div></header>'''
 
 FOOTER = f'''<footer><div class="wrap">
