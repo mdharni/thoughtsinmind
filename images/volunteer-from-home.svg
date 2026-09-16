@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="t"><title id="t">Illustration of handmade greeting cards, paper flowers, and markers on a table</title>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5F3F7"/><stop offset="1" stop-color="#E9DFF0"/></linearGradient></defs>
+<rect width="800" height="400" fill="url(#bg)"/>
+<circle cx="660" cy="80" r="120" fill="#F7E9CF" opacity=".8"/>
+<circle cx="120" cy="330" r="90" fill="#E1EBE3" opacity=".9"/>
+<!-- table edge -->
+<rect x="0" y="300" width="800" height="100" fill="#D9CFE0" opacity=".55"/>
+<!-- card 1: tulip card, tilted -->
+<g transform="translate(150 120) rotate(-8)">
+  <rect x="0" y="0" width="190" height="150" rx="8" fill="#fff" stroke="#DCD5E3"/>
+  <rect x="14" y="14" width="162" height="122" rx="6" fill="none" stroke="#E9DFF0" stroke-dasharray="4 5"/>
+  <path d="M95 118 V70" stroke="#6F8E78" stroke-width="4" stroke-linecap="round"/>
+  <path d="M95 100 C75 92 70 78 78 66 C88 74 94 84 95 100Z" fill="#8FA98F"/>
+  <path d="M95 104 C115 96 120 82 112 70 C102 78 96 88 95 104Z" fill="#8FA98F"/>
+  <path d="M78 66 C78 44 84 36 95 30 C106 36 112 44 112 66 C106 60 100 62 95 70 C90 62 84 60 78 66Z" fill="#D97B93"/>
+  <text x="95" y="132" font-family="Georgia, serif" font-size="13" fill="#4B2D5C" text-anchor="middle" font-style="italic">thinking of you</text>
+</g>
+<!-- card 2: heart card -->
+<g transform="translate(330 95) rotate(4)">
+  <rect x="0" y="0" width="200" height="160" rx="8" fill="#FBF8FD" stroke="#DCD5E3"/>
+  <rect x="0" y="0" width="200" height="34" rx="8" fill="#4B2D5C"/>
+  <rect x="0" y="26" width="200" height="8" fill="#4B2D5C"/>
+  <text x="100" y="23" font-family="Georgia, serif" font-size="15" fill="#FBF8FD" text-anchor="middle" letter-spacing="2">HELLO FRIEND</text>
+  <path d="M100 128 C60 100 52 76 68 62 C80 52 94 58 100 70 C106 58 120 52 132 62 C148 76 140 100 100 128Z" fill="#D9992F"/>
+  <circle cx="34" cy="118" r="5" fill="#E9DFF0"/><circle cx="166" cy="70" r="6" fill="#E1EBE3"/><circle cx="160" cy="130" r="4" fill="#F7E9CF"/>
+</g>
+<!-- card 3: birthday card, small -->
+<g transform="translate(560 150) rotate(-4)">
+  <rect x="0" y="0" width="150" height="120" rx="8" fill="#fff" stroke="#DCD5E3"/>
+  <rect x="56" y="50" width="38" height="40" rx="4" fill="#E9DFF0"/>
+  <rect x="50" y="42" width="50" height="12" rx="3" fill="#4B2D5C"/>
+  <path d="M75 42 V28 M60 28 Q75 10 90 28" stroke="#D9992F" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <text x="75" y="110" font-family="Georgia, serif" font-size="12" fill="#5E5668" text-anchor="middle">happy birthday</text>
+</g>
+<!-- pipe-cleaner flowers -->
+<g transform="translate(70 120)">
+  <path d="M30 210 C34 170 26 140 40 100" stroke="#6F8E78" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <g transform="translate(40 92)"><circle cx="0" cy="-22" r="12" fill="#D9992F"/><circle cx="21" cy="-7" r="12" fill="#D9992F"/><circle cx="13" cy="18" r="12" fill="#D9992F"/><circle cx="-13" cy="18" r="12" fill="#D9992F"/><circle cx="-21" cy="-7" r="12" fill="#D9992F"/><circle cx="0" cy="0" r="10" fill="#4B2D5C"/></g>
+  <path d="M60 215 C64 180 70 160 62 130" stroke="#6F8E78" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <g transform="translate(62 122)"><circle cx="0" cy="-20" r="11" fill="#CBA9DC"/><circle cx="19" cy="-6" r="11" fill="#CBA9DC"/><circle cx="12" cy="16" r="11" fill="#CBA9DC"/><circle cx="-12" cy="16" r="11" fill="#CBA9DC"/><circle cx="-19" cy="-6" r="11" fill="#CBA9DC"/><circle cx="0" cy="0" r="9" fill="#D9992F"/></g>
+</g>
+<!-- markers -->
+<g transform="translate(620 300) rotate(-18)"><rect x="0" y="0" width="150" height="20" rx="10" fill="#4B2D5C"/><rect x="118" y="0" width="32" height="20" rx="10" fill="#35203F"/><rect x="0" y="6" width="10" height="8" fill="#CBA9DC"/></g>
+<g transform="translate(600 330) rotate(-10)"><rect x="0" y="0" width="150" height="20" rx="10" fill="#D9992F"/><rect x="118" y="0" width="32" height="20" rx="10" fill="#B07A22"/></g>
+<g transform="translate(540 350) rotate(-4)"><rect x="0" y="0" width="150" height="20" rx="10" fill="#6F8E78"/><rect x="118" y="0" width="32" height="20" rx="10" fill="#4F6E58"/></g>
+<!-- scissors-free: a folded note -->
+<g transform="translate(400 290) rotate(6)"><rect x="0" y="0" width="120" height="70" rx="6" fill="#fff" stroke="#DCD5E3"/><path d="M16 20 H104 M16 34 H90 M16 48 H70" stroke="#DCD5E3" stroke-width="3" stroke-linecap="round"/></g>
+</svg>

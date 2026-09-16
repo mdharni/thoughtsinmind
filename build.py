@@ -34,7 +34,7 @@ TOPICS = [
 ]
 
 def nav(active):
-    items = [('index.html','Home'),('about.html','About'),('research.html','Research'),('workshops.html','Workshops'),('team.html','Our Team'),('facilities.html','For Facilities'),('contact.html','Contact')]
+    items = [('index.html','Home'),('about.html','About'),('research.html','Research'),('workshops.html','Workshops'),('facilities.html','For Facilities'),('volunteer.html','Volunteer'),('contact.html','Contact')]
     lis = ''.join('<li><a href="%s"%s>%s</a></li>' % (h, ' aria-current="page"' if h==active else '', t) for h,t in items)
     return f'''<a class="skip" href="#main">Skip to content</a>
 <header class="nav"><div class="wrap">
@@ -46,7 +46,7 @@ def nav(active):
 FOOTER = f'''<footer><div class="wrap">
   <div><a class="brand" href="index.html">{LOGO}<span>Thoughts in Mind</span></a>
     <p style="margin-top:14px;max-width:38ch">Evidence-based cognitive stimulation workshops for seniors in assisted living and nursing homes. Serving the Tri-Valley and East Bay.</p></div>
-  <div><h4>Explore</h4><ul><li><a href="about.html">Our mission</a></li><li><a href="research.html">Research foundation</a></li><li><a href="workshops.html">The workshops</a></li><li><a href="team.html">Facilitators &amp; training</a></li><li><a href="facilities.html">For facilities</a></li><li><a href="Thoughts-in-Mind-Brochure.pdf" download>Brochure (PDF)</a></li></ul></div>
+  <div><h4>Explore</h4><ul><li><a href="about.html">Our mission</a></li><li><a href="research.html">Research foundation</a></li><li><a href="workshops.html">The workshops</a></li><li><a href="about.html#team">Our team &amp; training</a></li><li><a href="facilities.html">For facilities</a></li><li><a href="volunteer.html">Volunteer with us</a></li><li><a href="Thoughts-in-Mind-Brochure.pdf" download>Brochure (PDF)</a></li></ul></div>
   <div><h4>Contact</h4><ul><li><a href="mailto:thoughtsinmind2@gmail.com">thoughtsinmind2@gmail.com</a></li><li><a href="tel:+19256602773">(925) 660-2773</a></li><li><a href="contact.html">Send an inquiry</a></li></ul></div>
   <div class="foot-note"><span>&copy; <span id="year">2026</span> Thoughts in Mind. All rights reserved.</span><span>Our workshops are enrichment programs, not medical therapy or treatment.</span></div>
 </div></footer>
@@ -163,7 +163,17 @@ home = f'''
     <div class="person"><div class="avatar"><img src="images/team-sehej.jpg" alt="Sehej Dharni" width="228" height="228"></div><h3>Sehej Dharni</h3><p class="role">Facilitator. Certified in Introduction to Caregiving and Dementia Care and Management.</p></div>
     <div class="person"><div class="avatar"><img src="images/team-yashita.jpg" alt="Yashita Vijay" width="208" height="208"></div><h3>Yashita Vijay</h3><p class="role">Facilitator. Certified in Introduction to Caregiving and Dementia Care and Management.</p></div>
   </div>
-  <p style="margin-top:28px"><a href="team.html">Meet the team and read about our training {ARROW.replace('<svg','<svg style="width:16px;height:16px;display:inline;vertical-align:-3px"')}</a></p>
+  <p style="margin-top:28px"><a href="about.html#team">Meet the team and read about our training {ARROW.replace('<svg','<svg style="width:16px;height:16px;display:inline;vertical-align:-3px"')}</a></p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="vol-teaser">
+    <div class="stack"><p class="eyebrow">Volunteer with us</p><h2>You don't need to be a facilitator to help</h2><p class="lede">Make cards and flowers from home, or join a workshop alongside our team. Every facilitator started as a volunteer.</p><div class="hero-actions"><a class="btn btn-primary" href="volunteer.html">See how to volunteer {ARROW}</a></div></div>
+    <div class="mini">
+      <div class="mini-item"><span class="ic">{ICONS['palette']}</span><div><strong>From home</strong><span class="muted">Cards, flowers, lyric sheets. No schedule.</span></div></div>
+      <div class="mini-item"><span class="ic">{ICONS['people']}</span><div><strong>In our workshops</strong><span class="muted">Sit with residents. Training provided.</span></div></div>
+    </div>
+  </div>
 </div></section>
 
 {cta()}
@@ -172,7 +182,7 @@ page('index.html','Thoughts in Mind','Evidence-based cognitive stimulation works
 
 # ---------------- ABOUT ----------------
 about = f'''
-<section class="page-head"><div class="wrap"><p class="eyebrow">About Thoughts in Mind</p><h1>Research-backed enrichment for older adults</h1><p class="lede">We deliver workshops incorporating CST-informed activities to seniors in assisted living and nursing homes. Here is what drives us and the evidence we build on.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="eyebrow">About Thoughts in Mind</p><h1>Research-backed enrichment for older adults</h1><p class="lede">We deliver workshops incorporating CST-informed activities to seniors in assisted living and nursing homes. Here is what drives us, who we are, and how we prepare.</p><p><a href="#team">Meet the team {ARROW.replace('<svg','<svg style="width:16px;height:16px;display:inline;vertical-align:-3px"')}</a></p></div></section>
 
 <section><div class="wrap split">
   <div class="sticky stack"><p class="eyebrow">Mission</p><h2>Protect cognitive health. Reduce isolation. Strengthen memory.</h2></div>
@@ -184,9 +194,41 @@ about = f'''
   </div>
 </div></section>
 
+<section id="team" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><div><p class="eyebrow">Our team</p><h2>Workshop facilitators</h2></div><p class="lede">Every facilitator is trained before stepping into a room with residents. Here is who we are and how we prepare.</p></div>
+  <div class="team">
+    <div class="person"><div class="avatar"><img src="images/team-noor.jpg" alt="Noor Dharni" width="270" height="270"></div><h3>Noor Dharni</h3><p class="role">Senior at UC Berkeley, pursuing a B.A. in Neuroscience and Public Health.</p>
+      <ul class="creds"><li>{CHECK}<span>Certified Nursing Assistant, California Department of Public Health (<a href="https://cvl.cdph.ca.gov/DetailPage.aspx?cert_holder_id=738672" target="_blank" rel="noopener">verify license</a>)</span></li></ul></div>
+    <div class="person"><div class="avatar"><img src="images/team-sehej.jpg" alt="Sehej Dharni" width="228" height="228"></div><h3>Sehej Dharni</h3><p class="role">Senior at Dublin High School.</p>
+      <ul class="creds"><li>{CHECK}<span>Certified: Introduction to Caregiving</span></li><li>{CHECK}<span>Certified: Introduction to Dementia Care and Management</span></li></ul></div>
+    <div class="person"><div class="avatar"><img src="images/team-yashita.jpg" alt="Yashita Vijay" width="208" height="208"></div><h3>Yashita Vijay</h3><p class="role">Senior at Dublin High School.</p>
+      <ul class="creds"><li>{CHECK}<span>Certified: Introduction to Caregiving</span></li><li>{CHECK}<span>Certified: Introduction to Dementia Care and Management</span></li></ul></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <figure class="split-photo" style="aspect-ratio:16/9"><img src="images/session-group.jpg" alt="Facilitators Yashita and Noor standing with residents at a workshop table" loading="lazy"></figure>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap split">
+  <div class="sticky stack"><p class="eyebrow">Facilitator training</p><h2>Before we work with residents</h2><p class="muted">Our facilitators are trained using established, publicly available resources designed for caregivers and volunteers working with individuals experiencing memory loss.</p></div>
+  <div class="prose">
+    <div class="card"><h3>Introduction to Caregiving <span class="muted" style="font-family:inherit;font-size:.9rem;font-weight:400">(Alison)</span></h3><p>The fundamentals of caregiving, effective communication, person-centered care, and supporting older adults.</p></div>
+    <div class="card"><h3>Dementia Care and Management <span class="muted" style="font-family:inherit;font-size:.9rem;font-weight:400">(Alison)</span></h3><p>Dementia types, communication strategies, behavioral support, and best practices for compassionate dementia care.</p></div>
+    <h3>What that training means in the room</h3>
+    <p>This training ensures every facilitator understands not just the activities themselves, but the reasoning behind them:</p>
+    <ul class="check">
+      <li>{CHECK}<span>How to pace a session so no one is rushed or left waiting</span></li>
+      <li>{CHECK}<span>How to redirect gently when a conversation drifts or a resident becomes unsettled</span></li>
+      <li>{CHECK}<span>How to encourage participation without pressure</span></li>
+      <li>{CHECK}<span>How to recognize signs of fatigue or distress and respond with care</span></li>
+    </ul>
+  </div>
+</div></section>
+
 {cta('Want the full curriculum?', 'Email us and we will send a complete breakdown of every workshop, the domains each one targets, and how a session runs from start to finish.')}
 '''
-page('about.html','About | Thoughts in Mind','Our mission and the research foundation behind Thoughts in Mind cognitive stimulation workshops.', about, 'about.html')
+page('about.html','About | Thoughts in Mind','Our mission, our facilitators, and how they are trained.', about, 'about.html')
 
 
 # ---------------- RESEARCH ----------------
@@ -263,44 +305,9 @@ workshops = f'''
 '''
 page('workshops.html','Workshops | Thoughts in Mind','The six core Thoughts in Mind cognitive stimulation workshops and what a session looks like.', workshops, 'workshops.html')
 
-# ---------------- TEAM ----------------
-team = f'''
-<section class="page-head"><div class="wrap"><p class="eyebrow">Our team</p><h1>Workshop facilitators</h1><p class="lede">Every facilitator is trained before stepping into a room with residents. Here is who we are and how we prepare.</p></div></section>
-
-<section><div class="wrap">
-  <div class="team">
-    <div class="person"><div class="avatar"><img src="images/team-noor.jpg" alt="Noor Dharni" width="270" height="270"></div><h3>Noor Dharni</h3><p class="role">Senior at UC Berkeley, pursuing a B.A. in Neuroscience and Public Health.</p>
-      <ul class="creds"><li>{CHECK}<span>Certified Nursing Assistant, California Department of Public Health (<a href="https://cvl.cdph.ca.gov/DetailPage.aspx?cert_holder_id=738672" target="_blank" rel="noopener">verify license</a>)</span></li></ul></div>
-    <div class="person"><div class="avatar"><img src="images/team-sehej.jpg" alt="Sehej Dharni" width="228" height="228"></div><h3>Sehej Dharni</h3><p class="role">Senior at Dublin High School.</p>
-      <ul class="creds"><li>{CHECK}<span>Certified: Introduction to Caregiving</span></li><li>{CHECK}<span>Certified: Introduction to Dementia Care and Management</span></li></ul></div>
-    <div class="person"><div class="avatar"><img src="images/team-yashita.jpg" alt="Yashita Vijay" width="208" height="208"></div><h3>Yashita Vijay</h3><p class="role">Senior at Dublin High School.</p>
-      <ul class="creds"><li>{CHECK}<span>Certified: Introduction to Caregiving</span></li><li>{CHECK}<span>Certified: Introduction to Dementia Care and Management</span></li></ul></div>
-  </div>
-</div></section>
-
-<section style="padding-top:0"><div class="wrap">
-  <figure class="split-photo" style="aspect-ratio:16/9"><img src="images/session-group.jpg" alt="Facilitators Yashita and Noor standing with residents at a workshop table" loading="lazy"></figure>
-</div></section>
-
-<section style="padding-top:0"><div class="wrap split">
-  <div class="sticky stack"><p class="eyebrow">Facilitator training</p><h2>Before we work with residents</h2><p class="muted">Our facilitators are trained using established, publicly available resources designed for caregivers and volunteers working with individuals experiencing memory loss.</p></div>
-  <div class="prose">
-    <div class="card"><h3>Introduction to Caregiving <span class="muted" style="font-family:inherit;font-size:.9rem;font-weight:400">(Alison)</span></h3><p>The fundamentals of caregiving, effective communication, person-centered care, and supporting older adults.</p></div>
-    <div class="card"><h3>Dementia Care and Management <span class="muted" style="font-family:inherit;font-size:.9rem;font-weight:400">(Alison)</span></h3><p>Dementia types, communication strategies, behavioral support, and best practices for compassionate dementia care.</p></div>
-    <h3>What that training means in the room</h3>
-    <p>This training ensures every facilitator understands not just the activities themselves, but the reasoning behind them:</p>
-    <ul class="check">
-      <li>{CHECK}<span>How to pace a session so no one is rushed or left waiting</span></li>
-      <li>{CHECK}<span>How to redirect gently when a conversation drifts or a resident becomes unsettled</span></li>
-      <li>{CHECK}<span>How to encourage participation without pressure</span></li>
-      <li>{CHECK}<span>How to recognize signs of fatigue or distress and respond with care</span></li>
-    </ul>
-  </div>
-</div></section>
-
-{cta('Meet us in person.', 'We are happy to visit your community, walk your activity team through a sample session, and answer questions before anything is scheduled.')}
-'''
-page('team.html','Our Team | Thoughts in Mind','Meet the Thoughts in Mind facilitators and learn how they are trained in caregiving and dementia care.', team, 'team.html')
+# ---------------- TEAM (moved into About; keep old URL working) ----------------
+with open(os.path.join(HERE, 'team.html'), 'w') as f:
+    f.write('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>Our Team | Thoughts in Mind</title><meta http-equiv="refresh" content="0; url=about.html#team"><link rel="canonical" href="about.html#team"></head><body><p>Our team has moved. <a href="about.html#team">Continue to About</a>.</p></body></html>\n')
 
 # ---------------- FACILITIES ----------------
 facilities = f'''
@@ -352,6 +359,92 @@ facilities = f'''
 '''
 page('facilities.html','For Facilities | Thoughts in Mind','How Thoughts in Mind cognitive stimulation workshops work with assisted living and nursing home communities.', facilities, 'facilities.html')
 
+
+# ---------------- VOLUNTEER ----------------
+volunteer = f'''
+<section class="page-head"><div class="wrap"><p class="eyebrow">Volunteer with us</p><h1>Help keep minds active.</h1><p class="lede">You don't need a medical background to make a difference for older adults living with memory loss. There are two ways to help: from your own kitchen table, or in the room with us.</p></div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><div><p class="eyebrow">Two ways to help</p><h2>Choose the path that fits your life</h2></div><p class="lede">Both matter. Handmade things brighten a resident's room for weeks. An extra pair of hands in a session means one more resident gets one-to-one attention.</p></div>
+  <div class="paths">
+    <article class="path" id="from-home">
+      <figure><img src="images/volunteer-from-home.svg" alt="Illustration of handmade greeting cards, paper flowers, and markers" width="800" height="400" loading="lazy"></figure>
+      <div class="body">
+        <span class="tag">From home · No schedule required</span>
+        <h3>Make something for a resident</h3>
+        <p class="muted">Residents keep handmade cards and flowers on their nightstands long after a session ends. Anyone can do this, at any age, on any timeline.</p>
+        <h4>Things you could make</h4>
+        <ul><li>Greeting and birthday cards with a short handwritten note</li><li>Paper or pipe-cleaner flowers and small bouquets</li><li>Large-print song-lyric sheets and word puzzles</li><li>"Letters to a friend": a few lines about your week or a place you love</li></ul>
+        <h4>Good for</h4>
+        <p class="muted">Students, families with kids, scout troops, clubs, and anyone who can't commit to a regular time. Email us and we will go over the details together.</p>
+        <a class="btn btn-ghost" href="#apply">Tell us what you'd like to make</a>
+      </div>
+    </article>
+    <article class="path" id="in-workshops">
+      <figure><img src="images/creative-table.jpg" alt="A facilitator leaning in to help residents with an activity at a long table" loading="lazy"></figure>
+      <div class="body">
+        <span class="tag">In our workshops · In person, Tri-Valley</span>
+        <h3>Join a session alongside our facilitators</h3>
+        <p class="muted">Sit with residents, hand out materials, sing along, and keep the conversation going. You'll be trained before your first session, and never left on your own.</p>
+        <h4>What you'll do</h4>
+        <ul><li>Greet residents by name and help them settle in</li><li>Pair one-to-one with a resident who needs extra support</li><li>Help someone hold a marker steady or find a word</li><li>Set up, pack away, and debrief with the team</li></ul>
+        <h4>Good for</h4>
+        <p class="muted">High school and college students, retirees, and anyone comfortable around older adults. Volunteers must be 14 or older. Facilitators must be 16 or older.</p>
+        <a class="btn btn-primary" href="#apply">Tell us about yourself {ARROW}</a>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><div><p class="eyebrow">The path</p><h2>From first email to facilitator</h2></div><p class="lede">Every one of our facilitators started here. In-person volunteers follow these five steps. Making from home needs only the first.</p></div>
+  <div class="journey">
+    <div class="jstep"><h3>Email us</h3><p>Tell us which path interests you and a little about yourself, or use the form below.</p></div>
+    <div class="jstep"><h3>A short conversation</h3><p>We'll talk about what you hope to do, your availability, and answer your questions.</p></div>
+    <div class="jstep"><h3>Training</h3><p>Complete two free online courses: Introduction to Caregiving, and Dementia Care and Management.</p></div>
+    <div class="jstep"><h3>Shadow, then co-lead</h3><p>Attend sessions with a facilitator, then take part of a session yourself.</p></div>
+    <div class="jstep"><h3>Facilitate</h3><p>Lead workshops with the team and help train the next volunteer. Facilitators are 16 and older.</p></div>
+  </div>
+</div></section>
+
+<section id="apply" style="padding-top:0"><div class="wrap contact-grid">
+  <div class="stack">
+    <div><p class="eyebrow">Tell us about yourself</p><h2>A few quick questions</h2><p class="lede" style="margin-top:12px">There are no wrong answers. This just helps us match you to the right path.</p></div>
+    <div class="callout sage"><h3>Prefer to just email?</h3><p>Write to <a href="mailto:thoughtsinmind2@gmail.com?subject=Volunteer">thoughtsinmind2@gmail.com</a> with "Volunteer" in the subject line. We reply to every message, and we'll walk you through training and everything else from there.</p></div>
+  </div>
+  <form id="volunteer-form" data-mail data-subject="Volunteer: {{path}} ({{name}})" data-endpoint="" data-key="">
+    <div class="two">
+      <div class="field"><label for="v-name">Your name</label><input id="v-name" name="name" required autocomplete="name"></div>
+      <div class="field"><label for="v-email">Email</label><input id="v-email" name="email" type="email" required autocomplete="email"></div>
+    </div>
+    <fieldset class="field" style="border:0;padding:0;margin:0;min-width:0"><legend style="font-weight:700;font-size:.95rem;padding:0;margin-bottom:6px">I'd like to <span class="hint">(pick one)</span></legend>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="path" value="Make things from home" required> Make things from home</label>
+        <label class="choice"><input type="radio" name="path" value="Volunteer in workshops"> Volunteer in workshops</label>
+        <label class="choice"><input type="radio" name="path" value="Both"> Both</label>
+      </div>
+    </fieldset>
+    <div class="field"><label for="v-do">What would you like to do with us? <span class="hint">A sentence or two is plenty.</span></label><textarea id="v-do" name="what" style="min-height:100px" required></textarea></div>
+    <div class="field"><label for="v-why">Why does this matter to you? <span class="hint">Maybe a grandparent, a class, or plain curiosity.</span></label><textarea id="v-why" name="why" style="min-height:100px"></textarea></div>
+    <div class="two">
+      <div class="field"><label for="v-who">I am a <span class="hint">(optional)</span></label><select id="v-who" name="who"><option value="">Prefer not to say</option><option>High school student</option><option>College student</option><option>Working adult</option><option>Retired</option><option>Parent volunteering with kids</option></select></div>
+      <div class="field"><label for="v-avail">Availability <span class="hint">(optional)</span></label><input id="v-avail" name="availability" placeholder="Weekend mornings, weekday afternoons…"></div>
+    </div>
+    <div><button class="btn btn-primary" type="submit">Send my note {ARROW}</button></div>
+    <p class="form-note form-status" role="status">We'll read it, reply by email, and take it from there.</p>
+    <div class="sent-panel" hidden>
+      <h3>Your message is ready</h3>
+      <p class="muted">Your email app should have opened. If it didn't, copy the message below and send it to <a href="mailto:thoughtsinmind2@gmail.com">thoughtsinmind2@gmail.com</a>, or use the button.</p>
+      <pre class="sent-text"></pre>
+      <div class="hero-actions"><button type="button" class="btn btn-ghost copy-btn">Copy message</button><a class="btn btn-primary mail-link" href="#">Open in email app</a></div>
+    </div>
+  </form>
+</div></section>
+
+{cta('Ready to help?', 'Email thoughtsinmind2@gmail.com with "Volunteer" in the subject. We will set up a short conversation and guide you through training.')}
+'''
+page('volunteer.html','Volunteer | Thoughts in Mind','Volunteer with Thoughts in Mind: make cards and flowers from home, or join our cognitive stimulation workshops in person.', volunteer, 'volunteer.html')
+
 # ---------------- CONTACT ----------------
 contact = f'''
 <section class="page-head"><div class="wrap"><p class="eyebrow">Contact</p><h1>Let's talk about your residents</h1><p class="lede">Email us for a full breakdown of the workshops, or use the form and we will get back to you.</p></div></section>
@@ -366,7 +459,7 @@ contact = f'''
     </div>
     <div class="callout"><h3>What to include</h3><p>Your community's name, your role, roughly how many residents might take part, and any scheduling preferences. We will reply with a full breakdown of each workshop.</p></div>
   </div>
-  <form id="inquiry" data-endpoint="" data-key="">
+  <form id="inquiry" data-mail data-subject="Workshop inquiry from {{facility}}" data-endpoint="" data-key="">
     <div class="two">
       <div class="field"><label for="name">Your name</label><input id="name" name="name" required autocomplete="name"></div>
       <div class="field"><label for="role">Your role</label><input id="role" name="role" placeholder="Activity director, administrator, family member…"></div>
@@ -379,12 +472,13 @@ contact = f'''
     <div class="field"><label for="residents">Approximate number of residents who might take part</label><select id="residents" name="residents"><option value="">Not sure yet</option><option>Fewer than 6</option><option>6 to 12</option><option>13 to 20</option><option>More than 20</option></select></div>
     <div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" placeholder="Tell us about your residents and what you are hoping for."></textarea></div>
     <div><button class="btn btn-primary" type="submit">Send inquiry {ARROW}</button></div>
-    <p class="form-note" id="form-status" role="status">We reply to every inquiry by email.</p>
-    <div class="sent-panel" id="sent-panel" hidden>
+    <p class="form-note form-status" role="status">We reply to every inquiry by email.</p>
+    <div class="sent-panel" hidden>
       <h3>Your message is ready</h3>
       <p class="muted">Your email app should have opened. If it didn't, copy the message below and send it to <a href="mailto:thoughtsinmind2@gmail.com">thoughtsinmind2@gmail.com</a>, or use the button.</p>
-      <pre id="sent-text"></pre>
-      <div class="hero-actions"><button type="button" class="btn btn-ghost" id="copy-btn">Copy message</button><a class="btn btn-primary" id="mail-link" href="#">Open in email app</a></div>
+      <pre class="sent-text"></pre>
+      <div class="hero-actions"><button type="button" class="btn btn-ghost copy-btn">Copy message</button><a class="btn btn-primary mail-link" href="#">Open in email app</a></div>
+    </div>
     </div>
   </form>
 </div></section>
